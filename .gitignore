@@ -1,0 +1,29 @@
+# Binaries & builds
+backend/bin/
+backend/dist/
+frontend/dist/
+frontend/node_modules/
+ml-service/__pycache__/
+ml-service/**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
+
+# Env
+.env
+.env.local
+
+# ML Artifacts (ignore raw checkpoints, keep models)
+ml-service/data/raw/*
+!ml-service/data/raw/.gitkeep

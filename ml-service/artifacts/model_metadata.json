@@ -1,0 +1,93 @@
+{
+  "version": "v1.0.0",
+  "training_date": "2026-08-29T19:05:01.522118",
+  "num_records": 12500,
+  "feature_columns": [
+    "transaction_amount",
+    "attempt_count",
+    "customer_success_rate",
+    "customer_failure_rate",
+    "customer_value",
+    "hour_of_day",
+    "day_of_week",
+    "customer_risk_ratio",
+    "value_per_attempt",
+    "is_peak_hour",
+    "is_weekend",
+    "pm_card",
+    "pm_upi",
+    "pm_netbanking",
+    "pm_wallet",
+    "pm_emi",
+    "reason_BANK_TIMEOUT",
+    "reason_NETWORK_ERROR",
+    "reason_INSUFFICIENT_FUNDS",
+    "reason_CARD_EXPIRED",
+    "reason_PAYMENT_METHOD_FAILURE",
+    "reason_CUSTOMER_ABANDONMENT",
+    "reason_TECHNICAL_ERROR"
+  ],
+  "baseline_model": {
+    "model_name": "Logistic Regression (Baseline)",
+    "accuracy": 0.634,
+    "precision": 0.645,
+    "recall": 0.8199,
+    "f1_score": 0.722,
+    "roc_auc": 0.6409,
+    "pr_auc": 0.6827,
+    "confusion_matrix": [
+      [
+        397,
+        654
+      ],
+      [
+        261,
+        1188
+      ]
+    ]
+  },
+  "primary_model": {
+    "model_name": "XGBoost Classifier (Primary)",
+    "accuracy": 0.6324,
+    "precision": 0.6422,
+    "recall": 0.8261,
+    "f1_score": 0.7226,
+    "roc_auc": 0.6391,
+    "pr_auc": 0.6763,
+    "confusion_matrix": [
+      [
+        384,
+        667
+      ],
+      [
+        252,
+        1197
+      ]
+    ]
+  },
+  "feature_importance": {
+    "attempt_count": 0.238,
+    "reason_INSUFFICIENT_FUNDS": 0.1392,
+    "customer_risk_ratio": 0.0432,
+    "reason_NETWORK_ERROR": 0.0401,
+    "reason_CUSTOMER_ABANDONMENT": 0.0385,
+    "customer_failure_rate": 0.0351,
+    "value_per_attempt": 0.0327,
+    "customer_success_rate": 0.0326,
+    "pm_emi": 0.0308,
+    "is_peak_hour": 0.0292,
+    "reason_TECHNICAL_ERROR": 0.0291,
+    "customer_value": 0.0289,
+    "transaction_amount": 0.0286,
+    "pm_netbanking": 0.0282,
+    "reason_BANK_TIMEOUT": 0.0274,
+    "pm_upi": 0.0273,
+    "hour_of_day": 0.0265,
+    "pm_wallet": 0.0261,
+    "reason_CARD_EXPIRED": 0.0247,
+    "day_of_week": 0.0246,
+    "reason_PAYMENT_METHOD_FAILURE": 0.0239,
+    "is_weekend": 0.0228,
+    "pm_card": 0.0227
+  }
+}

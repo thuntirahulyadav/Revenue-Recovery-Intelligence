@@ -1,0 +1,4 @@
+=== RUN   TestValidateSettings
+--- PASS: TestValidateSettings (0.00s)
+PASS
+ok  	razorpay-recovery-intelligence/backend/internal/handler	1.590s
