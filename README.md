@@ -407,38 +407,160 @@ http://localhost:5173
 # 📂 Project Structure
 
 ```text
-razorpay-recovery-intelligence/
-│
-├── frontend/
-│   ├── src/
-│   └── ...
+RecoveryIntelligenceSystem/
+├── .env
+├── .env.example
+├── .gitignore
+├── docker-compose.yml
+├── README.md
 │
 ├── backend/
+│   ├── Dockerfile
+│   ├── go.mod
+│   ├── go.sum
 │   ├── cmd/
+│   │   └── api/
+│   │       └── main.go
 │   ├── internal/
-│   └── ...
-│
-├── ml-service/
-│   ├── app/
-│   ├── models/
-│   └── ...
-│
-├── database/
+│   │   ├── audit/
+│   │   │   └── logger.go
+│   │   ├── config/
+│   │   │   └── config.go
+│   │   ├── domain/
+│   │   │   ├── customer.go
+│   │   │   ├── events.go
+│   │   │   ├── merchant.go
+│   │   │   ├── payment.go
+│   │   │   └── recovery.go
+│   │   ├── handler/
+│   │   │   ├── dashboard_handler.go
+│   │   │   ├── recovery_handler.go
+│   │   │   ├── settings_handler.go
+│   │   │   ├── settings_handler_test.go
+│   │   │   └── simulation_handler.go
+│   │   ├── kafka/
+│   │   │   └── event_bus.go
+│   │   ├── middleware/
+│   │   │   ├── cors.go
+│   │   │   ├── idempotency.go
+│   │   │   └── ratelimit.go
+│   │   ├── policy/
+│   │   │   └── engine.go
+│   │   ├── redis/
+│   │   │   └── client.go
+│   │   ├── repository/
+│   │   │   ├── audit_repo.go
+│   │   │   ├── customer_repo.go
+│   │   │   ├── db.go
+│   │   │   ├── merchant_repo.go
+│   │   │   ├── payment_repo.go
+│   │   │   ├── recovery_repo.go
+│   │   │   └── seeder.go
+│   │   └── service/
+│   │       ├── ml_client.go
+│   │       ├── recovery_service.go
+│   │       ├── recovery_service_test.go
+│   │       └── simulation_service.go
 │   ├── migrations/
-│   └── schema/
+│   │   ├── 001_init_schema.down.sql
+│   │   └── 001_init_schema.up.sql
+│   └── tests/
+│       ├── economic_engine_test.go
+│       └── policy_test.go
 │
 ├── docs/
+│   ├── api-contracts.md
+│   ├── architecture.md
+│   ├── demo-flow.md
+│   ├── kafka-events.md
+│   ├── ml-model.md
 │   └── images/
 │       ├── dashboard.png
 │       ├── opportunities.png
 │       └── simulation.png
 │
-├── docker-compose.yml
-├── README.md
-└── .env.example
-```
+├── frontend/
+│   ├── Dockerfile
+│   ├── index.html
+│   ├── nginx.conf
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── postcss.config.js
+│   ├── tailwind.config.js
+│   ├── tsconfig.json
+│   ├── vite.config.ts
+│   ├── public/
+│   └── src/
+│       ├── App.tsx
+│       ├── index.css
+│       ├── main.tsx
+│       ├── vite-env.d.ts
+│       ├── api/
+│       │   └── client.ts
+│       ├── components/
+│       │   ├── ExecutionModal.tsx
+│       │   ├── IngestEventModal.tsx
+│       │   └── KPICard.tsx
+│       ├── features/
+│       │   ├── dashboard/
+│       │   │   └── DashboardPage.tsx
+│       │   ├── opportunities/
+│       │   │   └── OpportunitiesPage.tsx
+│       │   ├── payment-details/
+│       │   │   └── PaymentDetailPage.tsx
+│       │   ├── settings/
+│       │   │   └── SettingsPage.tsx
+│       │   └── simulation/
+│       │       └── SimulationPage.tsx
+│       ├── layouts/
+│       │   └── AppLayout.tsx
+│       ├── types/
+│       │   └── index.ts
+│       └── utils/
+│           └── formatters.ts
+│
+├── ml-service/
+│   ├── Dockerfile
+│   ├── requirements.txt
+│   ├── app/
+│   │   ├── main.py
+│   │   ├── api/
+│   │   │   └── endpoints.py
+│   │   ├── schemas/
+│   │   │   └── prediction.py
+│   │   └── services/
+│   │       └── predictor.py
+│   ├── artifacts/
+│   │   ├── lr_model.joblib
+│   │   ├── model_metadata.json
+│   │   ├── scaler.joblib
+│   │   ├── shap_explainer.joblib
+│   │   └── xgb_model.joblib
+│   ├── data/
+│   │   └── synthetic/
+│   │       └── payments_recovery_synthetic.csv
+│   ├── tests/
+│   │   └── test_prediction.py
+│   └── training/
+│       ├── evaluate.py
+│       ├── feature_engineering.py
+│       ├── generate_dataset.py
+│       └── train.py
+│
+└── scripts/
+  ├── health-check.ps1
+  ├── health-check.sh
+  ├── run-training.ps1
+  ├── run-training.sh
+  ├── seed-data.ps1
+  └── seed-data.sh
 
-> Update this structure to exactly match your actual repository before submission.
+└── simulator/
+  ├── event-generator/
+  │   └── generator.py
+  └── recovery-simulator/
+    └── scenario_runner.py
+```
 
 ---
 

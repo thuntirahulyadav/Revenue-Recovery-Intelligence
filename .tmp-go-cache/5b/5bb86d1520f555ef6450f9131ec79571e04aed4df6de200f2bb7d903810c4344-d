@@ -1,3 +1,0 @@
-./cors.go
-./idempotency.go
-./ratelimit.go
