@@ -391,8 +391,8 @@ Install:
 ## Run the Application
 
 ```bash
-git clone <YOUR_REPOSITORY_URL>
-cd <YOUR_PROJECT_NAME>
+git clone <https://github.com/thuntirahulyadav/Revenue-Recovery-Intelligence>
+cd <Razorpay-Recovery-Intelligence>
 docker compose up --build
 ```
 
@@ -407,7 +407,7 @@ http://localhost:5173
 # 📂 Project Structure
 
 ```text
-RecoveryIntelligenceSystem/
+Razorpay-Recovery-Intelligence/
 ├── .env
 ├── .env.example
 ├── .gitignore
