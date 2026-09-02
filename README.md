@@ -391,8 +391,8 @@ Install:
 ## Run the Application
 
 ```bash
-git clone <https://github.com/thuntirahulyadav/Revenue-Recovery-Intelligence>
-cd <Razorpay-Recovery-Intelligence>
+git clone https://github.com/thuntirahulyadav/Revenue-Recovery-Intelligence
+cd Razorpay-Recovery-Intelligence
 docker compose up --build
 ```
 
